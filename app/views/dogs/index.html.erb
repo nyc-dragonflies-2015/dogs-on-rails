@@ -1,7 +1,9 @@
 <h1>OMG - it's some bowsers</h1>
 
-<% @dogs.each do |dog| %>
-  <%= render 'dog', dog: dog %>
-<% end %>
+<ul id='dog-list'>
+  <% @dogs.each do |dog| %>
+    <%= render 'dog', dog: dog %>
+  <% end %>
+</ul>
 
 <a href="#" id="add-dog">Add a Dog</a>
