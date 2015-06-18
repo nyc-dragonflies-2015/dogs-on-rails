@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   resources :dogs
   resources :users, only: [:create, :new]
 
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create', as: 'create_session'
+  delete '/logout' => 'sessions#destroy', as: 'logout'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
