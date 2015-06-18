@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  get '/dogs/form' => "dogs#form"
+
   resources :dogs do
     resources :toys
   end

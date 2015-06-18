@@ -9,6 +9,10 @@ class DogsController < ApplicationController
   def edit
   end
 
+  def form
+    render partial: 'form', locals: { dog: Dog.new }
+  end
+
   def update
     @dog.assign_attributes(dog_params)
     if @dog.save
