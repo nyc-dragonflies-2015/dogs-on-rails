@@ -2,3 +2,17 @@
 <h2>Detail view for:</h2>
 
 <%= render 'dog', dog: @dog %>
+
+<% if @dog.toys.count > 0 %>
+  <% @dog.toys.each do |toy| %>
+    <li><%= link_to toy.name, [@dog, toy] %></li>
+  <% end %>
+<% else %>
+  <p>Buy poor puppy a toy!</p>
+<% end %>
+
+<%= form_for([@dog, @toy]) do |f| %>
+  <%= f.label :name, 'Toy Name' %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>

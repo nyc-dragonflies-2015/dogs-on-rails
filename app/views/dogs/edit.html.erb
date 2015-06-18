@@ -1,0 +1,7 @@
+<h1>edit yo dog</h1>
+
+<%= form_for @dog do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :breed %>
+  <%= f.submit "Update your canine" %>
+<% end %>

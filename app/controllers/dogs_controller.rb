@@ -33,6 +33,7 @@ class DogsController < ApplicationController
 
   def show
     @dog = Dog.find(params[:id])
+    @toy = Toy.new
   end
 
   private
