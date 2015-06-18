@@ -12,7 +12,7 @@ $(document).ready(function() {
             data: $("form").serialize()
           })
           .done(function(dogPartial) {
-
+            $("ul").append(dogPartial);
           })
           .fail(function(){
             console.log('zack panda');

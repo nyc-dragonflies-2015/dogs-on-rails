@@ -23,11 +23,11 @@ class DogsController < ApplicationController
   end
 
   def create
-    dog = Dog.new(dog_params)
-    if dog.save
-      redirect_to dog
+    @dog = Dog.new(dog_params)
+    if @dog.save
+      request.xhr? ? render(partial: 'dog', object: @dog) : render
     else
-      render text: "you suck"
+      request.xhr? ? render(status: 422) : render('new')
     end
   end
 
