@@ -1,4 +1,6 @@
 class DogsController < ApplicationController
+  before_action :require_login, only: [:create, :edit, :update, :destroy]
+
   def index
     @dogs = Dog.all
   end
