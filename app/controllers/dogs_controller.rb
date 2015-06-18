@@ -25,7 +25,7 @@ class DogsController < ApplicationController
   def create
     @dog = Dog.new(dog_params)
     if @dog.save
-      request.xhr? ? render(partial: 'dog', object: @dog) : render
+      request.xhr? ? render(partial: 'dog', object: @dog) : redirect_to(@dog)
     else
       request.xhr? ? render(status: 422) : render('new')
     end
