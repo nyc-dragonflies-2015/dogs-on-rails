@@ -1,5 +1,6 @@
 class DogsController < ApplicationController
   before_action :require_login, only: [:create, :edit, :update, :destroy]
+  before_action :find_dog, only: [:edit, :update, :show]
 
   def index
     @dogs = Dog.all
@@ -26,5 +27,9 @@ class DogsController < ApplicationController
 
     def dog_params
       params.require(:dog).permit(:name, :breed)
+    end
+
+    def find_dog
+      @dog = Dog.find(params[:id])
     end
 end
