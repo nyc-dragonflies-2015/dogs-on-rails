@@ -6,6 +6,9 @@ class DogsController < ApplicationController
     @dogs = Dog.all
   end
 
+  def edit
+  end
+
   def create
     dog = Dog.new(dog_params)
     if dog.save
