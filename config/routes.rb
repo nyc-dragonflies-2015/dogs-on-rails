@@ -8,6 +8,9 @@ Rails.application.routes.draw do
 
   get '/hollaback' => 'hollaback#hollaback', as: 'hollaback'
   post '/make_u_holla' => 'hollaback#do_hollering', as: 'do_the_holla'
+
+  root 'dogs#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
