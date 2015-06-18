@@ -1,0 +1,8 @@
+<h1>Hey what's your name kid?</h1>
+
+<%= form_tag do_the_holla_path do %>
+  <%= label_tag :name, 'Please enter your Christian name:' %>
+  <%= text_field_tag :name %><br><br>
+
+  <%= submit_tag 'Hollaback!' %>
+<% end %>

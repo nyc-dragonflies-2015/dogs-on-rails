@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create', as: 'create_session'
   delete '/logout' => 'sessions#destroy', as: 'logout'
+
+  get '/hollaback' => 'hollaback#hollaback', as: 'hollaback'
+  post '/make_u_holla' => 'hollaback#do_hollering', as: 'do_the_holla'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
