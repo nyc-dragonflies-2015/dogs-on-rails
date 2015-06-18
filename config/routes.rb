@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :dogs
+  resources :dogs do
+    resources :toys
+  end
+
   resources :users, only: [:create, :new]
 
   get '/login' => 'sessions#new'
