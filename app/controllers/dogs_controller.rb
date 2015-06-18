@@ -9,6 +9,15 @@ class DogsController < ApplicationController
   def edit
   end
 
+  def update
+    @dog.assign_attributes(dog_params)
+    if @dog.save
+      redirect_to @dog
+    else
+      render :edit
+    end
+  end
+
   def create
     dog = Dog.new(dog_params)
     if dog.save
