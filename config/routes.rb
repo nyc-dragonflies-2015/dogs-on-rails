@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get '/dogs/form' => "dogs#form"
+  get '/dogs/dog_partial' => 'dogs#dog_partial'
 
   resources :dogs do
     resources :toys

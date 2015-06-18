@@ -35,6 +35,10 @@ class DogsController < ApplicationController
     @dog = Dog.new
   end
 
+  def dog_partial
+    render partial: 'dog', object: Dog.find(params[:id])
+  end
+
   def show
     @dog = Dog.find(params[:id])
     @toy = Toy.new
