@@ -1,5 +1,6 @@
 $(document).ready(function() {
   $("#add-dog").on('click', function(event) {
+    event.preventDefault()
     $.ajax("http://localhost:3000/dogs/form")
       .done(function(formHtml) {
         $("body").append(formHtml);
